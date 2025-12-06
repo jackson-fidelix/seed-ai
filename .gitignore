@@ -1,0 +1,29 @@
+# Python / Django
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+*.log
+
+# Ollama (nunca sobe os modelos de 5GB!)
+.ollama/
+models/
+ollama/
+Modelfile  # opcional: se quiser manter só no PC local
+
+# Django
+staticfiles/
+media/
+*.sqlite3
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
