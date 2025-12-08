@@ -1,0 +1,122 @@
+:root {
+    --bg-light: #f8faf5;
+    --bg-dark: #0a0e08;
+    --card-light: #ffffff;
+    --card-dark: #111905;
+    --user-bg: #4a7c59;
+    --seed-bg-light: #e8f5e9;
+    --seed-bg-dark: #1e2a1e;
+    --primary: #5d9c6e;
+    --accent: #8bc34a;
+    --text-light: #2d5016;
+    --text-dark: #d0e8c8;
+    --border-light: #c8e6c9;
+    --border-dark: #2e4f2e;
+}
+
+body.light { background: var(--bg-light); color: var(--text-light); }
+body.dark { background: var(--bg-dark); color: var(--text-dark); }
+body { 
+    transition: all 0.4s ease; 
+    min-height: 100vh; 
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.chat-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 12px 40px rgba(0,0,0,0.3);
+    background: var(--card-light);
+    max-width: 950px;
+    margin: 0 auto;
+}
+.dark .chat-card { background: var(--card-dark); border: 1px solid var(--border-dark); }
+
+
+.input-area {
+    background: var(--card-light);
+    border-top: 1px solid var(--border-light);
+    padding: clamp(12px, 3vw, 20px);
+    border-radius: 0 0 20px 20px;
+}
+.dark .input-area { 
+    background: var(--card-dark); 
+    border-top: 1px solid var(--border-dark);
+}
+
+/* Mensagens */
+.msg-user { 
+    background: var(--user-bg); 
+    color: white; 
+    border-radius: 18px 18px 4px 18px; 
+    max-width: 82%; 
+    padding: clamp(10px, 2vw, 16px);
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+}
+.msg-seed { 
+    background: var(--seed-bg-light); 
+    color: var(--text-light); 
+    border-radius: 18px 18px 18px 4px; 
+    max-width: 82%; 
+    padding: clamp(10px, 2vw, 16px);
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+}
+.dark .msg-seed { background: var(--seed-bg-dark); color: #c8e6c9; }
+
+.chat-container { 
+    height: clamp(40vh, 50vh, 65vh); 
+    overflow-y: auto; 
+    padding: clamp(5px, 2vw, 20px);
+}
+
+.camera-btn {
+    position: fixed;
+    bottom: clamp(70px, 12vh, 100px);
+    right: clamp(15px, 5vw, 30px);
+    width: clamp(56px, 12vw, 70px);
+    height: clamp(56px, 12vw, 70px);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8bc34a, #5d9c6e);
+    border: none;
+    box-shadow: 0 8px 25px rgba(74,124,89,0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.camera-btn:hover { transform: scale(1.15); }
+
+/* Digitando... suave e elegante */
+#typing-indicator .typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #888;
+    display: inline-block;
+    animation: typingPulse 1.4s infinite ease-in-out;
+}
+
+#typing-indicator .typing-dot:nth-child(1) { animation-delay: 0s; }
+#typing-indicator .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+#typing-indicator .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingPulse {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-10px); opacity: 1; }
+}
+
+.max-width-msg {
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+/* Animação de entrada suave (opcional, mas lindo) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate__fadeIn { animation: fadeIn 0.4s ease-out; }
