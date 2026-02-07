@@ -97,8 +97,15 @@ python manage.py runserver
 
 Abra no navegador:
 
+```
 http://127.0.0.1:8000/
-📂 Estrutura do Projeto
+```
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
 seed-ai/
 │── app/
 │   ├── templates/
@@ -109,6 +116,7 @@ seed-ai/
 │── seed/
 │── manage.py
 │── requirements.txt
+```
 
 ---
 
