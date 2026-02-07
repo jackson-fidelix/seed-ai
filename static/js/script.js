@@ -107,4 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('beforeunload', hideTyping);
+    
 });
