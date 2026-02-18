@@ -11,6 +11,8 @@ O usuário pode conversar naturalmente:
 
 > "Hoje estou muito ansioso com o futuro..."
 
+<img width="1721" height="1049" alt="image" src="https://github.com/user-attachments/assets/2b40aefe-4edb-4237-a0c9-5f56c4d29691" />
+
 A aplicação:
 
 * interpreta o sentimento
